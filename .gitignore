@@ -1,0 +1,16 @@
+libs/
+obj/
+bcb5/
+msv6/
+msv7/
+msv10/
+openvms/
+config
+config.status
+configure
+log4cpp.pc
+log4cpp.spec
+log4cpp-config
+Makefile
+Makefile.in
+
