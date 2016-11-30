@@ -1,9 +1,17 @@
-For all information about log4cpp go to http://log4cpp.sf.net/
+# log4cpp-Android
 
-#Building
-
-1) build c++_static for arm,arm-v7 and arm64 using: $ ndk-build NDK_APPLICATION_MK=`pwd`/Application.mk 
-2) create a zip package from the build using: $ ./create_package.sh "1_1_0"
+Port of the log4cpp logging library to Android. For all info about log4cpp goto its [official webpage](http://log4cpp.sf.net/)
 
 
+## Building:
+first build it all :+1:
 
+```bash
+$ ndk-build NDK_APPLICATION_MK=`pwd`/Application.mk 
+```
+
+then create a zip package from the build
+
+```bash
+$ ./create_package.sh "1_1_0"
+```
