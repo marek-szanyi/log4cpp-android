@@ -5,7 +5,7 @@ include $(CLEAR_VARS)
 
 #For debugging purpose
 LOCAL_CFLAGS := -Wall -DHAVE_CONFIG_H -std=c++11
-LOCAL_LDLIBS := -lc
+LOCAL_LDLIBS += -latomic -lc
 #Exporting the current directory for accessing the custom_debug.h
 LOCAL_C_INCLUDES := \
 $(LOCAL_PATH) \
@@ -63,7 +63,6 @@ src/RollingFileAppender.cpp \
 src/SimpleConfigurator.cpp \
 src/SimpleLayout.cpp \
 src/SmtpAppender.cpp \
-src/snprintf.c \
 src/StringQueueAppender.cpp \
 src/StringUtil.cpp \
 src/StringUtil.hh \

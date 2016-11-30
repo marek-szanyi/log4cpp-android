@@ -16,10 +16,16 @@ namespace log4cpp
    void BufferingAppender::_append(const LoggingEvent& event)
    {
       if (queue_.size() == max_size_)
+      {
          if (lossy_)
+         {
             queue_.pop_back();
+         }
          else
+         {
             dump();
+         }
+      }
 
       queue_.push_front(event);
       
@@ -38,7 +44,9 @@ namespace log4cpp
       std::ostringstream s;
       //  Solaris 10 CC can't work with const_reverse_iterator
       for(queue_t::reverse_iterator i = queue_.rbegin(), last = queue_.rend(); i != last; ++i)
+      {
          s << layout.format(*i);
+      }
 
       LoggingEvent event(EMPTY, s.str(), EMPTY, Priority::NOTSET);
       sink_->doAppend(event);
